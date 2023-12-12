@@ -1,0 +1,91 @@
+<!doctype HTML>
+<html>
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+
+
+<style>
+    .button {
+      background-color: #0000FF; 
+      border: none;
+      color: white;
+      padding: 7px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+      border: 2px solid rgba(9, 148, 28, 0.541);
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
+      
+    }
+    .wrap {
+    border: solid 1px #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  #output {
+    display: inline-block;
+    top: 4px;
+    position: relative;
+    border: dotted 1px #ccc;
+    padding: 2px;
+  }
+  
+  .button {
+    border: solid 2px #ccc;
+  }
+  
+    </style>
+
+<div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+    <button class="button" id="btn1">Extintor:PQS</button>
+    <button class="button" id="btn2">Extintor: CO2</button>
+    <button class="button" id="btn3">Extintor: Tipo K</button>
+</div>
+
+<body style='margin : 0px; overflow: hidden;'></body>
+    <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">  
+   
+      <a-marker preset="hiro">
+       
+        <a-entity id="entityID1" gltf-model=”url(extintor.glb)” scale="2.5 2.5 2.5">
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+
+    <script>
+        
+     document.getElementById("btn1").addEventListener("click", (e)=>{
+                    var el = document.querySelector('#entityID1');
+                    el.setAttribute("obj-model", 'obj:url(modelSAMUS/DolBarriersuit.obj);mtl:url(modelSAMUS/DolBarriersuit.mtl)');
+                    el.setAttribute("scale",'3 3 3');
+})
+    
+document.getElementById("btn2").addEventListener("click", (e)=>{
+                    
+                    var el = document.querySelector('#entityID1');
+              
+                    el.setAttribute("obj-model", 'obj:url(FE.obj);mtl:url(FE.mtl)');
+                    el.setAttribute("scale",'7 7 7');               
+})
+
+
+
+document.getElementById("btn3").addEventListener("click", (e)=>{
+                    
+                    var el = document.querySelector('#entityID1');
+              
+                    el.setAttribute("obj-model", 'obj:url(model3d/LDI_ArtecEVA_Glove_color_in.obj);mtl:url(model3d/LDI_ArtecEVA_Glove_color_in.mtl)');
+                    el.setAttribute("scale",'3 3 3');                  
+                  
+})
+
+</script>  
+  </body>
+</html>
+

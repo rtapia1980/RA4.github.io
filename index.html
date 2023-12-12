@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Realidad Aumentada Empezando desde cero</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+body{
+  text-align: center;
+  background-color: #0c3ae5;
+}
+.img{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  background-color: #1f0d5f; 
+    border: none;
+    color: white;
+    padding: 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.primero{
+  background-color: #ffffff;
+ text-align: center;
+ padding: 30px;
+ 
+border: 1px solid #ffffff solid #3639df;
+display:flex;
+justify-content: center;
+
+}
+
+.segundo{
+ text-align: center;
+}
+
+</style>
+<script>
+  function addScene() {
+    var scene = document.createElement("iframe")
+    scene.setAttribute("src", "/AR2/video.html")
+    scene.setAttribute("width", "640")
+    scene.setAttribute("height", "480")
+    scene.setAttribute("align", "center")
+    scene.setAttribute("style", "")
+    document.querySelector("body").appendChild(scene)
+   
+    var contador = 1;
+    document.getElementById('button').onclick = function() {
+    alert("No es necesario presionar mas de una vez el boton");
+    };
+  }
+  </script>
+ 
+
+  <body>
+    <div class="img">
+      <img src="logo2.jpg">
+    </div>
+
+    
+    <div class="primero">
+      <table width="80%" cellpadding="20">
+        <tr>
+          <td><img src="Parte.jpg" width="400px" height="400px"></td>
+          <td><iframe src="/AR2/index2.html" width="900px" height="700px"></iframe></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="segundo">
+      <button class="button" id="button" onclick="addScene()">
+      <p>Mostrar Video</p>
+      </button>
+    </div>
+
+    
+
+  </body>
+</html>
+
